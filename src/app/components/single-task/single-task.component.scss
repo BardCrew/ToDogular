@@ -1,0 +1,22 @@
+.box {
+    border: 1px solid blue;
+    box-sizing: border-box;
+    background-color: white;
+    border-radius: 20px;
+}
+
+.single-task {
+    text-shadow: 1px 1px blue;
+    word-wrap: break-word;
+}
+
+.title{
+    padding-left: 2%;
+    padding-right: 2%;
+    padding-top: 2%;
+}
+
+.date {
+    font-size: 15px;
+    text-shadow: .5px .5px blue;
+}

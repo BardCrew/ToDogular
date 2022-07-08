@@ -1,0 +1,7 @@
+<p class="box">Double-click task to remove it</p>
+<app-single-task 
+    *ngFor="let task of tasks"
+    [task]="task"
+    (taskDelete)="deleteTask(task)">
+</app-single-task>
+ 

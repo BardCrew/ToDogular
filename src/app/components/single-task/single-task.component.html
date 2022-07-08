@@ -1,0 +1,7 @@
+<div class="box single-task" (dblclick)="delete()">
+    <p class="title">{{task?.['task-name'] | uppercase}}</p>
+    <hr>
+    <p>{{task?.['task-desc']}}</p>
+    <p class="date">Added: {{task?.date | date:'d MMMM, y, HH:mm, EEEE'}}</p>
+</div>
+<br>

@@ -1,0 +1,36 @@
+.container{
+    text-align: center;
+    align-items: center;
+    font-size: 30px;
+    padding-top: 30px;
+    margin: auto;
+    padding: 0 15% 0 15%;
+}
+
+.title {
+    font-size: 50px;
+}
+
+.title:hover {
+    cursor: default;
+}
+
+.btn {
+    font-size: 30px;
+}
+
+input{
+    border: 1px solid blue;
+}
+
+.form-control.ng-invalid.ng-touched {
+    border: 1px solid red;
+}
+
+p {
+    font-size: 15px;
+    color: red
+}
+
+
+
