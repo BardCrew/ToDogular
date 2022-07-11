@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { TasksComponent } from './components/tasks/tasks.component';
 import { SingleTaskComponent } from './components/single-task/single-task.component';
 import { TasksService } from './services/tasks.service';
-import { HttpClientModule } from '@angular/common/http'
+import { HttpClientModule } from '@angular/common/http';
+import { AddTaskComponent } from './components/add-task/add-task.component'
 
 @NgModule({
   declarations: [
     AppComponent,
     TasksComponent,
-    SingleTaskComponent
+    SingleTaskComponent,
+    AddTaskComponent
   ],
   imports: [
     BrowserModule,

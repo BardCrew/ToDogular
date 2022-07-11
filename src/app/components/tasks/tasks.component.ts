@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { TasksService } from 'src/app/services/tasks.service';
 import { TASK } from 'src/app/Task.model';
@@ -11,7 +11,8 @@ import { TASK } from 'src/app/Task.model';
 export class TasksComponent implements OnInit, OnDestroy {
   tasks: TASK[]  = []
   sub?: Subscription;
-  sub2?: Subscription
+  sub2?: Subscription;
+  sub3?: Subscription;
 
   constructor(private taskService: TasksService) { }
 
@@ -24,13 +25,20 @@ export class TasksComponent implements OnInit, OnDestroy {
   ngOnDestroy(): void {
     this.sub?.unsubscribe();
     this.sub2?.unsubscribe();
+    this.sub3?.unsubscribe();
   }
 
   deleteTask(task: TASK) {
     if(confirm("Are you sure u want to delete this task?")) {
-      this.sub2 = this.taskService.deleteTask(task).subscribe()
-      this.tasks = this.tasks.filter(item => item.id !== task.id);
+      this.sub2 = this.taskService.deleteTask(task).subscribe(() => {
+        this.tasks = this.tasks.filter(item => item.id !== task.id)
+      })  
     };
-      
+  }
+
+  addTask(task: TASK) {
+    this.sub3 = this.taskService.addTask(task).subscribe((res)=>{
+      this.tasks.unshift(res)
+    })
   }
 }

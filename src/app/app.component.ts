@@ -9,29 +9,9 @@ import { TASK } from './Task.model';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-  formData: FormGroup = new FormGroup({});
-  showERR: boolean = false;
-  now?: Date
   title = 'AngularToDo';
+  constructor() { }
 
-  constructor(private taskService: TasksService) { }
+  ngOnInit(): void { }
 
-  ngOnInit(): void {
-    this.formData = new FormGroup({
-      'task-name': new FormControl(null, [Validators.required]),
-      'task-desc': new FormControl(null, Validators.required)
-    })
-  }
-
-  onSubmit() {
-    if(this.formData.valid) {
-      this.now = new Date()
-      this.formData.value['date'] = this.now
-      this.taskService.addTask(this.formData.value) 
-      this.formData.reset()
-      this.showERR = false
-    } else {
-      this.showERR = true
-    }
-  }
 }
