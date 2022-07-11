@@ -14,12 +14,9 @@ const httpOptions = {
 })
 export class TasksService implements OnDestroy {
   apiUrl: string = 'http://localhost:4300/tasks'
-  sub?: Subscription;
-  sub2?: Subscription;
   constructor(private http: HttpClient) {}
 
   ngOnDestroy(): void {
-    this.sub?.unsubscribe()
   }
   
   getTasks(): Observable<TASK[]> {
@@ -31,8 +28,8 @@ export class TasksService implements OnDestroy {
     return this.http.delete<TASK>(url); 
   }
 
-  addTask(task: TASK): void {
-    this.sub = this.http.post<TASK>(this.apiUrl, task, httpOptions).subscribe();
+  addTask(task: TASK): Observable<TASK> {
+    return this.http.post<TASK>(this.apiUrl, task, httpOptions);
   }
 
 }

@@ -1,27 +1,5 @@
 <div class="container title">ToDogular App</div>
 <br>
 <div class="container">
-  <form [formGroup]="formData" (ngSubmit)="onSubmit()" autocomplete="off">
-    <div class="form-group">
-      <label for="task_name">Enter task name: </label>
-      <input
-        class="form-control" 
-        type="text" 
-        name="task-name"
-        formControlName="task-name">
-      <br>
-      <label for="task_name">Enter description of the task: </label>
-      <input 
-        class="form-control" 
-        type="text" 
-        name="task-name"
-        formControlName="task-desc">
-      <br>
-      <br *ngIf="!showERR">
-      <p *ngIf="showERR">To add task u need to fill both fields</p>
-      <button class="btn btn-primary" type="submit">Add task</button>
-    </div>
-    <br>
-  </form>
   <app-tasks></app-tasks>
 </div>
