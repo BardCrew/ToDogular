@@ -1,6 +1,11 @@
 # AngularToDo
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.0.4.
+Its a simple To Do List App.
+
+## Project instalation
+
+Run 'npm install' in project folder.
 
 ## Development server
 
